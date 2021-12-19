@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
     stage = "dev"
+    login = credentials('tomcat')
     }
     stages {
         stage('Build') {
@@ -12,7 +13,7 @@ pipeline {
                    }
 }
         steps {            
-    echo "Building ${stage} .."
+    echo "Building ${stage} with ${login} .."
             }
         }
         stage('Dev') {
