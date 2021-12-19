@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
- choice(name: 'version', choices: ['1.0', '2.0', '3.0', '4.0'], decription: 'version details')
+ choice(name: 'version', choices: ['1.0', '2.0', '3.0', '4.0'], description: 'version details')
 }
     environment {
     stage = "dev"
