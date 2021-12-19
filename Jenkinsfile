@@ -1,3 +1,4 @@
+def gv
 pipeline {
     agent any
     parameters {
@@ -16,6 +17,11 @@ pipeline {
                    }
 }
         steps {            
+        script {
+         gv = load "script.groovy"
+         gv.buildapp()
+   
+}
     echo "Building ${stage} with VERSION ${params.version} .."
             }
         }
