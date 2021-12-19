@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    parameters {
+ choice(name: 'version', choices: ['1.0', '2.0', '3.0', '4.0'], decription: 'version details')
+}
     environment {
     stage = "dev"
     login = credentials('tomcat')
@@ -13,7 +16,7 @@ pipeline {
                    }
 }
         steps {            
-    echo "Building ${stage} with ${login} .."
+    echo "Building ${stage} with VERSION ${params.version} .."
             }
         }
         stage('Dev') {
