@@ -5,23 +5,25 @@ pipeline {
     }
     stages {
         stage('Build') {
-            steps {
+            
             when {
                 expression  {
                    BRANCH_NAME == "dev"
                    }
 }
-                echo "Building ${stage} .."
+        steps {            
+    echo "Building ${stage} .."
             }
         }
         stage('Dev') {
-            steps {
             when {
                   expression {
                 BRANCH_NAME == "master"
 }
 }
-                echo "Testing on ${BRANCH_NAME} .."
+            steps {
+               
+ echo "Testing on ${BRANCH_NAME} .."
             }
         }
         stage('Deploy Dev') {
