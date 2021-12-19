@@ -9,13 +9,13 @@ pipeline {
     login = credentials('tomcat')
     }
     stages {
-    stage('init'){
+    stage("initi") {
         steps {
         script {
          gv = load "script.groovy"
 
 }
-
+}
 }
 
 
@@ -52,4 +52,4 @@ pipeline {
         }
     }
 }
-}
+
