@@ -9,6 +9,16 @@ pipeline {
     login = credentials('tomcat')
     }
     stages {
+    stage('init'){
+        steps {
+        script {
+         gv = load "script.groovy"
+
+}
+
+}
+
+
         stage('Build') {
             
             when {
@@ -18,7 +28,6 @@ pipeline {
 }
         steps {            
         script {
-         gv = load "script.groovy"
          gv.buildapp()
    
 }
