@@ -1,10 +1,12 @@
 pipeline {
     agent any
-
+    environment {
+    stage = "dev"
+    }
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo "Building ${stage} .."
             }
         }
         stage('Dev') {
